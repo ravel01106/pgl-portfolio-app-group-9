@@ -1,20 +1,14 @@
+import React from 'react';
 import { useState } from 'react';
 import { Button, Pressable, ScrollView, StyleSheet, Text, View, Image } from 'react-native';
 import QRCode from 'react-native-qrcode-svg';
+import  Header from './components/Header'
 
 export default function App() {
   const [displayMyQR, setDisplayMyQR] = useState(true);
   return (
     <View style={styles.container}>
-      <View style={styles.topContainer}>
-        <Text style={styles.firsttoprowContainer}>My Portfolio App</Text>
-        <View style={styles.rowTopSecondContainer}>
-        <Pressable style={styles.buttonruta} onPress={() => setDisplayMyQR(true)}>
-          <Text style={{...{color: 'white', fontWeight: 'bold', textTransform: 'uppercase'}, ...styles.shadoxboxing}}>Mi info</Text>
-        </Pressable>
-        <Button onPress={() => setDisplayMyQR(false)} title="Mi Repo" color="light-gray" accessibilityLabel='Un botón pal QR' />
-        </View>
-      </View>
+      <Header setDisplayMyQR={setDisplayMyQR}/>
       {
         displayMyQR ?
           <View style={styles.bodystails}>
