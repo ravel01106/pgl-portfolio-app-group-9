@@ -1,62 +1,20 @@
-import { StyleSheet, Text, View,Image, ScrollView } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import React from 'react'
+import Card from './Card'
+import Features from './Features'
 
 export default function information() {
   return (
     <View style={styles.bodystails}>
-    <View>
-      <View style={{flexDirection: 'row', alignItems: 'center'}}>
-        <Image style={styles.avatar} source={require('../assets/SofyanAmrabat.jpg')}></Image>
-        <View style={{margin: 10, backgroundColor: 'lightgray', padding: 10, borderRadius: 10, width: '70%'}}>
-          <Text style={{textAlign:'center', fontWeight: '700', fontSize: 20}}>
-            Descripción sobre mí!
-          </Text>
-          <Text>
-            Soy profe y me gusta mi trabajo aunque a veces me de por enrevesar prácticas para mis queridos alumnos
-          </Text>
-        </View>
+      <View>
+        <Card/>
+        <Features/>
       </View>
-      <Text style= {{color: 'beriblak', fontWeight: "900", textTransform: 'capitalize', fontSize: 20, textAlign: 'center'}}>
-        cosas que me gustan mucho:
-      </Text>
-      <ScrollView style={{padding: 10}}>
-        <Text style={styles.cosasQmeGustanMuxoEstails}>Salir a pasear</Text>
-        <Text style={styles.cosasQmeGustanMuxoEstails}>Senderismo</Text>
-        <Text style={styles.cosasQmeGustanMuxoEstails}>Ir a la playita</Text>
-        <Text style={styles.cosasQmeGustanMuxoEstails}>Domingos de misa</Text>
-        <Text style={styles.cosasQmeGustanMuxoEstails}>La guitarrita</Text>
-        <Text style={styles.cosasQmeGustanMuxoEstails}>El monte con lluvia</Text>
-        <Text style={styles.cosasQmeGustanMuxoEstails}>Viajar</Text>
-        <Text style={styles.cosasQmeGustanMuxoEstails}>Música variadita</Text>
-        <Text style={styles.cosasQmeGustanMuxoEstails}>Anime</Text>
-        <Text style={styles.cosasQmeGustanMuxoEstails}>Ducharme</Text>
-        <Text style={styles.cosasQmeGustanMuxoEstails}>Videojuegos</Text>
-        <Text style={styles.cosasQmeGustanMuxoEstails}>Ir de cenar romántica</Text>
-      </ScrollView>
     </View>
-  </View>
   )
 }
 
 const styles = StyleSheet.create({
-    
-  avatar: {
-    height: 90,
-    width: 90,
-    borderRadius: 100
-  },
-  cosasQmeGustanMuxoEstails: {
-    borderColor: 'black',
-    borderWidth: 1,
-    borderStyle: 'dashed',
-    padding: 20,
-    color: 'darkred',
-    textAlign: 'center',
-    fontWeight: 'bold',
-    fontStyle: 'italic',
-    fontSize: 16,
-    backgroundColor: 'silver'
-  },
   bodystails: {
     width: '100%',
     borderWidth: 2,
