@@ -1,58 +1,55 @@
-import { StyleSheet, Text, View, Pressable, Button } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, Pressable, Button } from "react-native";
+import React from "react";
 
 interface HeaderProps {
-    setDisplayMyQR:Function
+  setDisplayMyQR: Function;
 }
 
-const Header = (props:HeaderProps) => {
-  const { setDisplayMyQR} = props
+export default function Header(props: HeaderProps) {
+  const { setDisplayMyQR } = props;
+
+  const handleChange = (election: boolean): void => {
+    setDisplayMyQR(election);
+  };
+
   return (
-    <View style={styles.topContainer}>
-      <Text style={styles.firsttoprowContainer}>My Portfolio App</Text>
-      <View style={styles.rowTopSecondContainer}>
-        <Pressable style={styles.buttonruta} onPress={() => setDisplayMyQR(true)}>
-          <Text style={{...{color: 'white', fontWeight: 'bold', textTransform: 'uppercase'}, ...styles.shadoxboxing}}>Mi info</Text>
-        </Pressable>
-        <Button onPress={() => setDisplayMyQR(false)} title="Mi Repo" color="light-gray" accessibilityLabel='Un botón pal QR' />
+    <View style={styles.container}>
+      <Text style={styles.title}>My Portfolio App</Text>
+      <View style={styles.navbar}>
+        <Button
+          color="light-gray"
+          title="Mi info"
+          onPress={() => handleChange(true)}
+          accessibilityLabel="Un botón para acceder a mi información"
+        />
+        <Button
+          onPress={() => handleChange(false)}
+          title="Mi Repo"
+          color="light-gray"
+          accessibilityLabel="Un botón para acceder QR"
+        />
       </View>
     </View>
-  )
+  );
 }
 
-export default Header
-
 const styles = StyleSheet.create({
-  topContainer: {
-    height: '15%',
+  container: {
+    height: "15%",
     paddingTop: 50,
-    width: '100%',
+    width: "100%",
   },
-  firsttoprowContainer: {
-    backgroundColor: 'gray',
-    textAlign: 'center',
-    fontWeight: 'bold',
-    textAlignVertical: 'center',
+  title: {
+    backgroundColor: "gray",
+    textAlign: "center",
+    fontWeight: "bold",
+    textAlignVertical: "center",
     fontSize: 30,
   },
-  rowTopSecondContainer: {
-    flexDirection: 'row',
-    backgroundColor: 'darkgray',
-    justifyContent: 'center',
-    alignItems: 'center'
+  navbar: {
+    flexDirection: "row",
+    backgroundColor: "darkgray",
+    justifyContent: "space-around",
+    alignItems: "center",
   },
-  buttonruta: {
-    width:'50%',
-  },
-  shadoxboxing: {
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 7,
-    },
-    shadowOpacity: 0.43,
-    shadowRadius: 9.51,
-
-    elevation: 15,
-  }
-})
+});
