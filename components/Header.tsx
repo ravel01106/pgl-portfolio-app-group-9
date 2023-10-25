@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Pressable, Button } from "react-native";
 import React from "react";
-
+import { colors } from "../assets/color/Color";
 interface HeaderProps {
   setDisplayMyQR: Function;
 }
@@ -17,7 +17,6 @@ export default function Header(props: HeaderProps) {
       <Text style={styles.title}>My Portfolio App</Text>
       <View style={styles.navbar}>
         <Button
-          color="light-gray"
           title="Mi info"
           onPress={() => handleChange(true)}
           accessibilityLabel="Un botón para acceder a mi información"
@@ -25,7 +24,6 @@ export default function Header(props: HeaderProps) {
         <Button
           onPress={() => handleChange(false)}
           title="Mi Repo"
-          color="light-gray"
           accessibilityLabel="Un botón para acceder QR"
         />
       </View>
@@ -35,20 +33,21 @@ export default function Header(props: HeaderProps) {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: colors.primary,
     height: "15%",
     paddingTop: 50,
     width: "100%",
+    color: colors.text
   },
   title: {
-    backgroundColor: "gray",
     textAlign: "center",
     fontWeight: "bold",
     textAlignVertical: "center",
     fontSize: 30,
+    color: colors.text
   },
   navbar: {
     flexDirection: "row",
-    backgroundColor: "darkgray",
     justifyContent: "space-around",
     alignItems: "center",
   },
