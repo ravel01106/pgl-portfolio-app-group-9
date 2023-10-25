@@ -19,13 +19,15 @@ export default function Features() {
   return (
     <View>
       <Text style={styles.title}>cosas que me gustan mucho:</Text>
-      <ScrollView style={styles.containerFeatures}>
-        {features.map((feature, index) => (
-          <Text key={index} style={styles.feature}>
-            {feature}
-          </Text>
-        ))}
-      </ScrollView>
+      <View style={styles.scrollviewContainer}>
+        <ScrollView style={styles.containerFeatures}>
+          {features.map((feature, index) => (
+            <Text key={index} style={styles.feature}>
+              {feature}
+            </Text>
+          ))}
+        </ScrollView>
+      </View>
     </View>
   );
 }
@@ -52,5 +54,9 @@ const styles = StyleSheet.create({
   },
   containerFeatures: {
     padding: 10,
+    flex: 2
   },
+  scrollviewContainer: {
+    height: "82%"
+  }
 });
