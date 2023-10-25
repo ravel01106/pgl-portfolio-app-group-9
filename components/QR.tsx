@@ -4,29 +4,20 @@ import QRCode from 'react-native-qrcode-svg';
 
 export default function QR() {
   return (
-    <View style={styles.bodystails}>
-        <View style={styles.CentrarcodigoQR}>
-            <QRCode value="https://github.com/adhernea" />
-        </View>
+    <View style={styles.qrContainer}>
+        <QRCode value="https://github.com/adhernea" />
     </View>
   )
 }
 
 
 const styles = StyleSheet.create({
-    bodystails: {
+    qrContainer: {
         width: '100%',
         borderWidth: 2,
         borderColor: 'black',
         alignItems: 'center',
-        justifyContent: 'space-between',
-        height: '85%'
-    },
-    CentrarcodigoQR: {
         justifyContent: 'center',
-        borderWidth: 1,
-        width: '100%',
-        height: '100%',
-        alignItems: 'center'
-    },
+        height: '85%'
+    }
 })
