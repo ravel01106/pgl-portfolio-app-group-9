@@ -54,9 +54,9 @@ const styles = StyleSheet.create({
   },
   containerFeatures: {
     padding: 10,
-    flex: 2
+    flex: 2,
   },
   scrollviewContainer: {
-    height: "82%"
-  }
+    height: "82%",
+  },
 });
