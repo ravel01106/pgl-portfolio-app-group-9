@@ -6,7 +6,7 @@ export default function Card() {
     <View style={styles.cardContainer}>
       <Image
         style={styles.avatar}
-        source={require("../assets/SofyanAmrabat.jpg")}
+        source={require("../assets/images/SofyanAmrabat.jpg")}
       ></Image>
       <View style={styles.cardContent}>
         <Text style={styles.cardTittle}>Descripción sobre mí!</Text>
