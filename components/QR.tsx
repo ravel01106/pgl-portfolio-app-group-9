@@ -2,7 +2,7 @@ import { StyleSheet, View } from 'react-native'
 import React from 'react'
 import QRCode from 'react-native-qrcode-svg';
 
-const QR = () => {
+export default function QR() {
   return (
     <View style={styles.bodystails}>
         <View style={styles.CentrarcodigoQR}>
@@ -12,7 +12,6 @@ const QR = () => {
   )
 }
 
-export default QR
 
 const styles = StyleSheet.create({
     bodystails: {

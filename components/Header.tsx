@@ -5,7 +5,7 @@ interface HeaderProps {
     setDisplayMyQR:Function
 }
 
-const Header = (props:HeaderProps) => {
+export default function Header(props:HeaderProps) {
   const { setDisplayMyQR} = props
   return (
     <View style={styles.topContainer}>
@@ -20,7 +20,6 @@ const Header = (props:HeaderProps) => {
   )
 }
 
-export default Header
 
 const styles = StyleSheet.create({
   topContainer: {

@@ -5,7 +5,7 @@ import Features from './Features'
 
 export default function information() {
   return (
-    <View style={styles.bodystails}>
+    <View style={styles.informationContainer}>
       <View>
         <Card/>
         <Features/>
@@ -15,7 +15,7 @@ export default function information() {
 }
 
 const styles = StyleSheet.create({
-  bodystails: {
+  informationContainer: {
     width: '100%',
     borderWidth: 2,
     borderColor: 'black',
