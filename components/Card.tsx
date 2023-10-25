@@ -4,10 +4,10 @@ import React from 'react'
 export default function Card() {
   return (
     
-    <View style={{flexDirection: 'row', alignItems: 'center'}}>
+    <View style={styles.cardContainer}>
         <Image style={styles.avatar} source={require('../assets/SofyanAmrabat.jpg')}></Image>
-        <View style={{margin: 10, backgroundColor: 'lightgray', padding: 10, borderRadius: 10, width: '70%'}}>
-            <Text style={{textAlign:'center', fontWeight: '700', fontSize: 20}}>
+        <View style={styles.cardContent}>
+            <Text style={styles.cardTittle}>
                 Descripción sobre mí!
             </Text>
             <Text>
@@ -25,4 +25,20 @@ const styles = StyleSheet.create({
         width: 90,
         borderRadius: 100
       },
+    cardContainer: {
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+    cardContent: {
+      margin: 10,
+      backgroundColor: 'lightgray',
+      padding: 10,
+      borderRadius: 10,
+      width: '70%'
+    },
+    cardTittle: {
+      textAlign:'center',
+      fontWeight: '700',
+      fontSize: 20
+    }
 })
