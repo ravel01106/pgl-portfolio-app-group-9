@@ -17,8 +17,6 @@ export default function information() {
 const styles = StyleSheet.create({
   informationContainer: {
     width: "100%",
-    borderWidth: 2,
-    borderColor: "black",
     alignItems: "center",
     justifyContent: "space-between",
     height: "85%",

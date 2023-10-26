@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Pressable, Button } from "react-native";
+import { StyleSheet, Text, View, Pressable } from "react-native";
 import React from "react";
 import { colors } from "../assets/color/Color";
 interface HeaderProps {
@@ -14,18 +14,20 @@ export default function Header(props: HeaderProps) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>My Portfolio App</Text>
+      <View style={styles.containerTitle}>
+        <Text style={styles.title}>My Portfolio App</Text>
+      </View>
       <View style={styles.navbar}>
-        <Button
-          title="Mi info"
-          onPress={() => handleChange(true)}
-          accessibilityLabel="Un botón para acceder a mi información"
-        />
-        <Button
-          onPress={() => handleChange(false)}
-          title="Mi Repo"
-          accessibilityLabel="Un botón para acceder QR"
-        />
+        <Pressable onPress={() => handleChange(true)} style = {styles.buttonStyles}> 
+          <Text style = {styles.buttonsText}>
+            MI INFO
+          </Text>
+        </Pressable>
+        <Pressable onPress={() => handleChange(false)} style = {styles.buttonStyles}>
+          <Text style = {styles.buttonsText}>
+            MI REPO
+          </Text>
+        </Pressable>
       </View>
     </View>
   );
@@ -34,11 +36,27 @@ export default function Header(props: HeaderProps) {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.primary,
-    height: "15%",
+    height: "20%",
     paddingTop: 50,
     width: "100%",
     color: colors.text
   },
+
+  containerTitle: {
+    marginVertical: 15,
+  },
+
+  buttonStyles: {
+    backgroundColor: colors.ternary,
+    padding: 10,
+    borderRadius: 10,
+  },
+
+  buttonsText: {
+    color: colors.text,
+    fontWeight: 'bold'
+  },
+
   title: {
     textAlign: "center",
     fontWeight: "bold",
