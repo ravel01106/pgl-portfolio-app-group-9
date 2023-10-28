@@ -2,15 +2,33 @@ import React from "react";
 import { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import Header from "./components/Header";
-import Information from "./components/Information";
-import QR from "./components/QR";
+import { colors } from "./assets/color/Color";
+import { CardData } from "./assets/interfaces/carddata";
+import Card from "./components/Card";
 
 export default function App() {
   const [displayMyQR, setDisplayMyQR] = useState(true);
+  const dataAmanda:CardData = {
+    title: "Amanda Ravelo Cabrera",
+    description: "I am a full stack programmer who is very curious about new technologies.",
+    background: require("./assets/images/fondo-amanda.jpg"),
+    avatar: require("./assets/images/avatar.png"),
+    skillList: ["TypeScript", "JavaScript", "Python", "Java", "MySQL", "PHP", "MongoDB", "CSS", "HTML"]
+  }
+  const dataVallejo:CardData = {
+    title: "Alejandro Vallejo",
+    description: "I am a full stack programmer who is very curious about new technologies.",
+    background: require("./assets/images/fondo-provisional.jpg"),
+    avatar: require("./assets/images/avatar-provisional.jpeg"),
+    skillList: ["TypeScript", "JavaScript", "HTML", "Python", "Java", "CSS", "MySQL", "Oracle"]
+  }
   return (
     <View style={styles.container}>
       <Header setDisplayMyQR={setDisplayMyQR} />
-      {displayMyQR ? <Information /> : <QR />}
+      <View style={styles.informationContainer}>
+      {displayMyQR ?  <Card data={dataAmanda}/> : <Card data={dataVallejo}/> }
+
+      </View>
     </View>
   );
 }
@@ -21,5 +39,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+  },
+  informationContainer: {
+    width: "100%",
+    alignItems: "center",
+    justifyContent: "space-between",
+    height: "85%",
+    backgroundColor: colors.background,
   },
 });

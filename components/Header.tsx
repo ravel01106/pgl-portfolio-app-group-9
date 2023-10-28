@@ -1,9 +1,8 @@
 import { StyleSheet, Text, View, Pressable } from "react-native";
 import React from "react";
 import { colors } from "../assets/color/Color";
-interface HeaderProps {
-  setDisplayMyQR: Function;
-}
+import { HeaderProps } from "../assets/interfaces/headerprops";
+
 
 export default function Header(props: HeaderProps) {
   const { setDisplayMyQR } = props;
@@ -20,12 +19,12 @@ export default function Header(props: HeaderProps) {
       <View style={styles.navbar}>
         <Pressable onPress={() => handleChange(true)} style = {styles.buttonStyles}> 
           <Text style = {styles.buttonsText}>
-            MI INFO
+            PORTAFOLIO AMANDA
           </Text>
         </Pressable>
         <Pressable onPress={() => handleChange(false)} style = {styles.buttonStyles}>
           <Text style = {styles.buttonsText}>
-            MI REPO
+            PORTAFOLIO VALLEJO
           </Text>
         </Pressable>
       </View>
@@ -47,7 +46,7 @@ const styles = StyleSheet.create({
   },
 
   buttonStyles: {
-    backgroundColor: colors.ternary,
+    backgroundColor: colors.secondary,
     padding: 10,
     borderRadius: 10,
   },
