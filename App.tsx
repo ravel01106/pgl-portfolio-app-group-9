@@ -7,29 +7,54 @@ import { CardData } from "./assets/interfaces/carddata";
 import Card from "./components/Card";
 
 export default function App() {
-  const [displayMyQR, setDisplayMyQR] = useState(true);
-  const dataAmanda:CardData = {
+  const [displayPortfolioAmanda, setDisplayPortfolioAmanda] = useState(true);
+  const dataAmanda: CardData = {
     title: "Amanda Ravelo Cabrera",
-    description: "I am a full stack programmer who is very curious about new technologies.",
+    description:
+      "I am a full stack programmer who is very curious about new technologies.",
     background: require("./assets/images/fondo-amanda.jpg"),
     avatar: require("./assets/images/avatar.png"),
-    skillList: ["TypeScript", "JavaScript", "Python", "Java", "MySQL", "PHP", "MongoDB", "CSS", "HTML"],
-    qr:"github.com/ravel01106"
-  }
-  const dataVallejo:CardData = {
+    skillList: [
+      "TypeScript",
+      "JavaScript",
+      "Python",
+      "Java",
+      "MySQL",
+      "PHP",
+      "MongoDB",
+      "CSS",
+      "HTML",
+    ],
+    qr: "github.com/ravel01106",
+  };
+  const dataVallejo: CardData = {
     title: "Alejandro Vallejo García",
-    description: "I am a full stack programmer way worse than Amanda but still better than Ricardo.",
+    description:
+      "I am a full stack programmer way worse than Amanda but still better than Ricardo.",
     background: require("./assets/images/fondo-alejandro.jpg"),
     avatar: require("./assets/images/avatar-alejandro.jpg"),
-    skillList: ["TypeScript", "JavaScript", "HTML", "Python", "Java", "CSS", "MySQL", "Oracle", "Videogames"],
-    qr: "github.com/AleVallejoGarcia"
-  }
+    skillList: [
+      "TypeScript",
+      "JavaScript",
+      "HTML",
+      "Python",
+      "Java",
+      "CSS",
+      "MySQL",
+      "Oracle",
+      "Videogames",
+    ],
+    qr: "github.com/AleVallejoGarcia",
+  };
   return (
     <View style={styles.container}>
-      <Header setDisplayMyQR={setDisplayMyQR} />
+      <Header setDisplayPortfolioAmanda={setDisplayPortfolioAmanda} />
       <View style={styles.informationContainer}>
-      {displayMyQR ?  <Card data={dataAmanda}/> : <Card data={dataVallejo}/> }
-
+        {displayPortfolioAmanda ? (
+          <Card data={dataAmanda} />
+        ) : (
+          <Card data={dataVallejo} />
+        )}
       </View>
     </View>
   );

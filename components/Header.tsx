@@ -3,12 +3,11 @@ import React from "react";
 import { colors } from "../assets/color/Color";
 import { HeaderProps } from "../assets/interfaces/headerprops";
 
-
 export default function Header(props: HeaderProps) {
-  const { setDisplayMyQR } = props;
+  const { setDisplayPortfolioAmanda } = props;
 
   const handleChange = (election: boolean): void => {
-    setDisplayMyQR(election);
+    setDisplayPortfolioAmanda(election);
   };
 
   return (
@@ -17,15 +16,17 @@ export default function Header(props: HeaderProps) {
         <Text style={styles.title}>My Portfolio App</Text>
       </View>
       <View style={styles.navbar}>
-        <Pressable onPress={() => handleChange(true)} style = {styles.buttonStyles}> 
-          <Text style = {styles.buttonsText}>
-            PORTAFOLIO AMANDA
-          </Text>
+        <Pressable
+          onPress={() => handleChange(true)}
+          style={styles.buttonStyles}
+        >
+          <Text style={styles.buttonsText}>PORTAFOLIO AMANDA</Text>
         </Pressable>
-        <Pressable onPress={() => handleChange(false)} style = {styles.buttonStyles}>
-          <Text style = {styles.buttonsText}>
-            PORTAFOLIO VALLEJO
-          </Text>
+        <Pressable
+          onPress={() => handleChange(false)}
+          style={styles.buttonStyles}
+        >
+          <Text style={styles.buttonsText}>PORTAFOLIO VALLEJO</Text>
         </Pressable>
       </View>
     </View>
@@ -38,7 +39,7 @@ const styles = StyleSheet.create({
     height: "20%",
     paddingTop: 50,
     width: "100%",
-    color: colors.text
+    color: colors.text,
   },
 
   containerTitle: {
@@ -53,7 +54,7 @@ const styles = StyleSheet.create({
 
   buttonsText: {
     color: colors.text,
-    fontWeight: 'bold'
+    fontWeight: "bold",
   },
 
   title: {
@@ -61,7 +62,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlignVertical: "center",
     fontSize: 30,
-    color: colors.text
+    color: colors.text,
   },
   navbar: {
     flexDirection: "row",
