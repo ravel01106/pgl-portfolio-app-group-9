@@ -13,14 +13,16 @@ export default function App() {
     description: "I am a full stack programmer who is very curious about new technologies.",
     background: require("./assets/images/fondo-amanda.jpg"),
     avatar: require("./assets/images/avatar.png"),
-    skillList: ["TypeScript", "JavaScript", "Python", "Java", "MySQL", "PHP", "MongoDB", "CSS", "HTML"]
+    skillList: ["TypeScript", "JavaScript", "Python", "Java", "MySQL", "PHP", "MongoDB", "CSS", "HTML"],
+    qr:"github.com/ravel01106"
   }
   const dataVallejo:CardData = {
-    title: "Alejandro Vallejo",
-    description: "I am a full stack programmer who is very curious about new technologies.",
-    background: require("./assets/images/fondo-provisional.jpg"),
-    avatar: require("./assets/images/avatar-provisional.jpeg"),
-    skillList: ["TypeScript", "JavaScript", "HTML", "Python", "Java", "CSS", "MySQL", "Oracle"]
+    title: "Alejandro Vallejo García",
+    description: "I am a full stack programmer way worse than Amanda but still better than Ricardo.",
+    background: require("./assets/images/fondo-alejandro.jpg"),
+    avatar: require("./assets/images/avatar-alejandro.jpg"),
+    skillList: ["TypeScript", "JavaScript", "HTML", "Python", "Java", "CSS", "MySQL", "Oracle", "Videogames"],
+    qr: "github.com/AleVallejoGarcia"
   }
   return (
     <View style={styles.container}>

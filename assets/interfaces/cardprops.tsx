@@ -13,7 +13,8 @@ export interface FrontCardProps {
 
 export interface DescriptionProps {
     title:string,
-    description:string
+    description:string,
+    qr: string
 }
 export interface SkillListProps {
     skillList:string[]

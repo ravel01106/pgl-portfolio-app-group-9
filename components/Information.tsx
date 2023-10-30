@@ -10,7 +10,8 @@ export default function information() {
     description: "I am a full stack programmer who is very curious about new technologies.",
     background: require("../assets/images/fondo-amanda.jpg"),
     avatar: require("../assets/images/avatar.png"),
-    skillList: ["TypeScript", "JavaScript", "Python", "Java", "MySQL", "PHP", "MongoDB", "C"]
+    skillList: ["TypeScript", "JavaScript", "Python", "Java", "MySQL", "PHP", "MongoDB", "C"],
+    qr: "github.com/ravel01106"
   }
   return (
     <View style={styles.informationContainer}>

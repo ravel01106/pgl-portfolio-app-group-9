@@ -7,4 +7,5 @@ export interface CardData {
     background:ImageBackgroundProps,
     avatar:ImageProps,
     skillList: string[],
+    qr: string
   }

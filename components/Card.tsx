@@ -9,14 +9,14 @@ import { CardProps } from "../assets/interfaces/cardprops";
 
 export default function Card(props:CardProps) {
   const {data} = props
-    const {title, description, background, avatar, skillList} = data
+    const {title, description, background, avatar, skillList, qr} = data
   const [displayMyInfo, setDisplayMyInfo] = useState(true)
   return (
     <View style={styles.cardContainer}>
       <FrontCard background={background} avatar={avatar}/>
       { displayMyInfo ? 
         ( 
-          <Description title={title} description={description}/> 
+          <Description title={title} description={description} qr={qr}/> 
         ) : ( 
           <SkillList skillList={skillList}/> 
         )

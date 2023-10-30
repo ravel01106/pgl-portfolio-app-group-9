@@ -2,16 +2,42 @@ import { StyleSheet, Text, View, ScrollView } from 'react-native'
 import React from 'react'
 import { colors } from "../assets/color/Color";
 import { SkillListProps } from '../assets/interfaces/cardprops';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default function SkillList(props:SkillListProps) {
   const {skillList} = props
+
+  const getIconNameForSkill = (skill: string) => {
+    switch(skill) {
+      case 'TypeScript': return 'language-typescript';
+      case 'JavaScript': return 'language-javascript';
+      case 'Python': return 'language-python';
+      case 'Java': return 'language-java';
+      case 'PHP': return 'language-php';
+      case 'CSS': return 'language-css3';
+      case 'HTML': return 'language-html5';
+      case 'MySQL': return 'dolphin';
+      case 'Oracle': return 'database-outline';
+      case 'C': return 'language-c';
+      case 'MongoDB': return 'leaf';
+      case 'Videogames': return 'microsoft-xbox-controller';
+      default: return 'horse'; 
+    }
+  }
+
   return (
     <View style={styles.skillContainer}>
     <Text style={[styles.skillTitle, styles.text]}> SKILLS </Text>
     <ScrollView style={styles.skillList}>
       {skillList.map((skill, index) => (
-      <Text style={styles.text} key={index}>{skill}</Text>
+        <View style={styles.skillItem}>
+          <Text style={styles.text} key={index}>{skill}</Text>
+          <MaterialCommunityIcons name= {getIconNameForSkill(skill)} size={20} color={colors.text}/>
+
+        </View>
       ))}
+      
+
     </ScrollView>
   </View>
   )
@@ -23,6 +49,12 @@ const styles = StyleSheet.create({
     skillTitle: {
         fontSize: 18,
         fontWeight: "bold",
+    },
+    skillItem: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      marginBottom: 10, 
+      alignSelf: 'center'
     },
     text: {
         color: colors.text,
