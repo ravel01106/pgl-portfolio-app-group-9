@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, ScrollView } from "react-native";
 import React from "react";
 import { colors } from "../assets/color/Color";
-import { SkillListProps } from "../assets/interfaces/cardprops";
+import { SkillListProps } from "../assets/interfaces/CardProps";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 export default function SkillList(props: SkillListProps) {
@@ -44,12 +44,12 @@ export default function SkillList(props: SkillListProps) {
       <ScrollView style={styles.skillList}>
         {skillList.map((skill, index) => (
           <View key={index} style={styles.skillItem}>
-            <Text style={styles.text}>{skill}</Text>
             <MaterialCommunityIcons
               name={getIconNameForSkill(skill)}
               size={20}
               color={colors.text}
             />
+            <Text style={styles.text}>{skill}</Text>
           </View>
         ))}
       </ScrollView>
@@ -66,7 +66,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     marginBottom: 10,
-    alignSelf: "center",
+    alignSelf: "flex-start",
+    marginLeft: 45
+    
   },
   text: {
     color: colors.text,

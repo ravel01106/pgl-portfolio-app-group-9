@@ -3,7 +3,7 @@ import { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import Header from "./components/Header";
 import { colors, colorsDark } from "./assets/color/Color";
-import { CardData } from "./assets/interfaces/carddata";
+import { CardData } from "./assets/interfaces/CardData";
 import Card from "./components/Card";
 
 export default function App() {

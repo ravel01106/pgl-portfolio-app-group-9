@@ -5,7 +5,7 @@ import Description from "./Description";
 import SkillList from "./SkillList";
 import ArrowSelection from "./ArrowSelection";
 import FrontCard from "./FrontCard";
-import { CardProps } from "../assets/interfaces/cardprops";
+import { CardProps } from "../assets/interfaces/CardProps";
 
 export default function Card(props: CardProps) {
   const { data, isEnabled } = props;

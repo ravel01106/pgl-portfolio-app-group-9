@@ -1,6 +1,6 @@
 import { ImageBackgroundProps } from "react-native";
 import { ImageProps } from "react-native";
-import { CardData } from "./carddata";
+import { CardData } from "./CardData";
 
 export interface CardProps {
     data:CardData

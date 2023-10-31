@@ -2,7 +2,7 @@ import { Modal, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React, { useState } from "react";
 import { AntDesign, Entypo } from "@expo/vector-icons";
 import { colors, colorsDark } from "../assets/color/Color";
-import { DescriptionProps } from "../assets/interfaces/cardprops";
+import { DescriptionProps } from "../assets/interfaces/CardProps";
 import QRCode from "react-native-qrcode-svg";
 
 export default function Description(props: DescriptionProps) {

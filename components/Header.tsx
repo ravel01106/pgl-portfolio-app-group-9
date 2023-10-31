@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, Pressable, Switch } from "react-native";
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { colors, colorsDark } from "../assets/color/Color";
-import { HeaderProps } from "../assets/interfaces/headerprops";
+import { HeaderProps } from "../assets/interfaces/HeaderProps";
 
 export default function Header(props: HeaderProps) {
   const { setDisplayPortfolioAmanda, setIsEnabled, isEnabled } = props;

@@ -1,6 +1,6 @@
 import { StyleSheet, ImageBackground, Image } from "react-native";
 import React from "react";
-import { FrontCardProps } from "../assets/interfaces/cardprops";
+import { FrontCardProps } from "../assets/interfaces/CardProps";
 
 export default function FrontCard(props: FrontCardProps) {
   const { background, avatar } = props;
