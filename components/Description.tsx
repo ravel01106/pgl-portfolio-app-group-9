@@ -45,7 +45,12 @@ export default function Description(props: DescriptionProps) {
         <View style={styles.modalContainer}>
           <QRCode value={qr} size={200} />
           <TouchableOpacity
-            style={[styles.closeButton, isEnabled ? {backgroundColor: colors.primary} : {backgroundColor: colorsDark.primary}]}
+            style={[
+              styles.closeButton,
+              isEnabled
+                ? { backgroundColor: colors.primary }
+                : { backgroundColor: colorsDark.primary },
+            ]}
             onPress={() => setModalVisible(false)}
           >
             <Text style={styles.closeButtonText}>Close</Text>

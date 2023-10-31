@@ -67,8 +67,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 10,
     alignSelf: "flex-start",
-    marginLeft: 45
-    
+    marginLeft: 45,
   },
   text: {
     color: colors.text,

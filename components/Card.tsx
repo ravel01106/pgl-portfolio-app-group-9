@@ -1,4 +1,4 @@
-import { StyleSheet, View, ImageBackground, Image } from "react-native";
+import { StyleSheet, View } from "react-native";
 import React, { useState } from "react";
 import { colors, colorsDark } from "../assets/color/Color";
 import Description from "./Description";
@@ -12,10 +12,22 @@ export default function Card(props: CardProps) {
   const { title, description, background, avatar, skillList, qr } = data;
   const [displayMyInfo, setDisplayMyInfo] = useState(true);
   return (
-    <View style={[styles.cardContainer, isEnabled ? {backgroundColor: colors.backgroundCard} : {backgroundColor: colorsDark.backgroundCard}]}>
+    <View
+      style={[
+        styles.cardContainer,
+        isEnabled
+          ? { backgroundColor: colors.backgroundCard }
+          : { backgroundColor: colorsDark.backgroundCard },
+      ]}
+    >
       <FrontCard background={background} avatar={avatar} />
       {displayMyInfo ? (
-        <Description title={title} description={description} qr={qr} isEnabled={isEnabled} />
+        <Description
+          title={title}
+          description={description}
+          qr={qr}
+          isEnabled={isEnabled}
+        />
       ) : (
         <SkillList skillList={skillList} />
       )}
