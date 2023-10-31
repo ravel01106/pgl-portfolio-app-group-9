@@ -4,6 +4,7 @@ import { CardData } from "./carddata";
 
 export interface CardProps {
     data:CardData
+    isEnabled: boolean
 }
 
 export interface FrontCardProps {
@@ -14,7 +15,8 @@ export interface FrontCardProps {
 export interface DescriptionProps {
     title:string,
     description:string,
-    qr: string
+    qr: string,
+    isEnabled: boolean
 }
 export interface SkillListProps {
     skillList:string[]

@@ -2,12 +2,14 @@ import React from "react";
 import { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import Header from "./components/Header";
-import { colors } from "./assets/color/Color";
+import { colors, colorsDark } from "./assets/color/Color";
 import { CardData } from "./assets/interfaces/carddata";
 import Card from "./components/Card";
 
 export default function App() {
   const [displayPortfolioAmanda, setDisplayPortfolioAmanda] = useState(true);
+  const [isEnabled, setIsEnabled] = useState(true);
+
   const dataAmanda: CardData = {
     title: "Amanda Ravelo Cabrera",
     description:
@@ -48,12 +50,12 @@ export default function App() {
   };
   return (
     <View style={styles.container}>
-      <Header setDisplayPortfolioAmanda={setDisplayPortfolioAmanda} />
-      <View style={styles.informationContainer}>
+      <Header setDisplayPortfolioAmanda={setDisplayPortfolioAmanda} setIsEnabled={setIsEnabled} isEnabled={isEnabled}/>
+      <View style={[styles.informationContainer , isEnabled ? {backgroundColor: colors.background} : {backgroundColor: colorsDark.background}]}>
         {displayPortfolioAmanda ? (
-          <Card data={dataAmanda} />
+          <Card data={dataAmanda} isEnabled={isEnabled}/>
         ) : (
-          <Card data={dataVallejo} />
+          <Card data={dataVallejo} isEnabled={isEnabled}/>
         )}
       </View>
     </View>
@@ -63,7 +65,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -72,6 +73,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     height: "85%",
-    backgroundColor: colors.background,
   },
 });

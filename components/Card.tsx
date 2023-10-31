@@ -1,6 +1,6 @@
 import { StyleSheet, View, ImageBackground, Image } from "react-native";
 import React, { useState } from "react";
-import { colors } from "../assets/color/Color";
+import { colors, colorsDark } from "../assets/color/Color";
 import Description from "./Description";
 import SkillList from "./SkillList";
 import ArrowSelection from "./ArrowSelection";
@@ -8,14 +8,14 @@ import FrontCard from "./FrontCard";
 import { CardProps } from "../assets/interfaces/cardprops";
 
 export default function Card(props: CardProps) {
-  const { data } = props;
+  const { data, isEnabled } = props;
   const { title, description, background, avatar, skillList, qr } = data;
   const [displayMyInfo, setDisplayMyInfo] = useState(true);
   return (
-    <View style={styles.cardContainer}>
+    <View style={[styles.cardContainer, isEnabled ? {backgroundColor: colors.backgroundCard} : {backgroundColor: colorsDark.backgroundCard}]}>
       <FrontCard background={background} avatar={avatar} />
       {displayMyInfo ? (
-        <Description title={title} description={description} qr={qr} />
+        <Description title={title} description={description} qr={qr} isEnabled={isEnabled} />
       ) : (
         <SkillList skillList={skillList} />
       )}

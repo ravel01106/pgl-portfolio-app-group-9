@@ -1,12 +1,12 @@
 import { Modal, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React, { useState } from "react";
 import { AntDesign, Entypo } from "@expo/vector-icons";
-import { colors } from "../assets/color/Color";
+import { colors, colorsDark } from "../assets/color/Color";
 import { DescriptionProps } from "../assets/interfaces/cardprops";
 import QRCode from "react-native-qrcode-svg";
 
 export default function Description(props: DescriptionProps) {
-  const { title, description, qr } = props;
+  const { title, description, qr, isEnabled } = props;
   const [isModalVisible, setModalVisible] = useState(false);
 
   return (
@@ -45,7 +45,7 @@ export default function Description(props: DescriptionProps) {
         <View style={styles.modalContainer}>
           <QRCode value={qr} size={200} />
           <TouchableOpacity
-            style={styles.closeButton}
+            style={[styles.closeButton, isEnabled ? {backgroundColor: colors.primary} : {backgroundColor: colorsDark.primary}]}
             onPress={() => setModalVisible(false)}
           >
             <Text style={styles.closeButtonText}>Close</Text>

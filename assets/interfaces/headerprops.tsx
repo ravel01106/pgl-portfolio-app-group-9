@@ -1,3 +1,5 @@
 export interface HeaderProps {
-  setDisplayPortfolioAmanda: Function;
+  setDisplayPortfolioAmanda: Function,
+  setIsEnabled: Function,
+  isEnabled: boolean
   }
